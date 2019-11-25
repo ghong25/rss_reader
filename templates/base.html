@@ -1,20 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> RSS Feed Reader </title>
-    <link rel="stylesheet" href="../static/base.css">
-</head>
-<body>
-    <!-- Navigation bar at the top of all of the pages -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">RSS Feed Reader</a>
-            <div>
-                <a href="/sources">Sources</a> |
-                <a href="/">Home</a>
-            </div>
-        </nav>
-    </header>
-</body>
+<!doctype html>
+<html>
+  <head>
+      <title>RSS Feed Reader</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+      <link rel="stylesheet" href="../static/base.css">
+  </head>
+  <body>
+      <div class="container">
+           {% block content %}{% endblock %}
+      </div>
+
+    </div>
+  </body>
 </html>
+
+        <!-- Side navigation -->
+        <div class="sidenav">
+            <a href="/">Home</a>
+            <a href="/sources">Sources</a>
+                  <button class="dropdown-btn">Feeds &nbsp &nbsp &nbsp &nbsp &nbsp ▼
+                  </button>
+                  <div class="dropdown-container">
+                        <a href="#">Link 1</a>
+                    <!--a href="#">Link 2</a>
+                    <a href="#">Link 3</a-->
+                      {% for source in sources %}
+                      <source>
+                      <a href="/">
+                          {{ source.title }}
+                      </a>
+                      {% endfor %}
+                  </div>
+                </div>
+                <script>
+                /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+                var dropdown = document.getElementsByClassName("dropdown-btn");
+                var i;
+
+                for (i = 0; i < dropdown.length; i++) {
+                  dropdown[i].addEventListener("click", function() {
+                  this.classList.toggle("active");
+                  var dropdownContent = this.nextElementSibling;
+                  if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                  } else {
+                  dropdownContent.style.display = "block";
+                  }
+                  });
+                }
+                </script>

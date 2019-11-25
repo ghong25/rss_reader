@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Sources</title>
+</head>
+<body>
+<link rel="stylesheet" href="../static/sources.css">
+    <h1>Sources</h1>
+    <div id="form">
+        <form method="POST" class="feedform">
+        <input name="feed" required>
+        <button type="submit">Add feed</button>
+        </form>
+        {% for source in sources %}
+        <div>
+            <a href="{{ source.link }}">{{ source.title }}</a>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+{% endblock %}

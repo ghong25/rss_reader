@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <title>Latest News</title>
+        <link rel="stylesheet" type="text/css" href="../static/home.css">
+    </head>
+    <body>
+        <main>
+            <h1 id="toptitle">Latest News</h1>
+            {% for article in articles %}
+            <article>
+                <h1>
+                    <a href="/read/{{ article.id }}">{{ article.title }}</a>
+                </h1>
+                <div class="source">
+                    <a href="{{ article.source.link }}">
+                        {{ article.source.title }}
+                    </a>
+                </div>
+                <div class="added">
+                    {{ article.date_published }}
+                </div>
+                <div class="body">
+                    {{ article.body }}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+        <!-- next and previous buttons -->
+        <div class="buttons" style="float: snap;">
+            <a href="/" class="previous">&laquo; Older Posts</a>
+            <a href="/" class="next">Newer Posts &raquo;</a>
+        </div>
+</html>
+{% endblock %}

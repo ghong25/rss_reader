@@ -8,7 +8,8 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-app.run(debug=True)
-
 import routes, models
+
+app.run(debug=True, port=8000)
+
 
