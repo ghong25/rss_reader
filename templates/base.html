@@ -10,23 +10,18 @@
            {% block content %}{% endblock %}
       </div>
 
-    </div>
-  </body>
-</html>
 
         <!-- Side navigation -->
         <div class="sidenav">
             <a href="/">Home</a>
             <a href="/sources">Sources</a>
+            <a href="/delete">Remove Feed</a>
                   <button class="dropdown-btn">Feeds &nbsp &nbsp &nbsp &nbsp &nbsp ▼
                   </button>
                   <div class="dropdown-container">
-                        <a href="#">Link 1</a>
-                    <!--a href="#">Link 2</a>
-                    <a href="#">Link 3</a-->
                       {% for source in sources %}
                       <source>
-                      <a href="/">
+                      <a href="/sort/{{ source.id }}">
                           {{ source.title }}
                       </a>
                       {% endfor %}
@@ -49,3 +44,6 @@
                   });
                 }
                 </script>
+    </div>
+  </body>
+</html>

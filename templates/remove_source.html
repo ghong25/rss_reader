@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Sources</title>
+</head>
+<body>
+<link rel="stylesheet" href="../static/sources.css">
+    <h1></h1>
+    <div id="form">
+        <h2>Click on a feed to remove it</h2>
+        {% for source in sources %}
+        <div>
+            <a href="/delete/{{ source.id }}">{{ source.link }}</a>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+{% endblock %}

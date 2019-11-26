@@ -1,6 +1,8 @@
+
 * {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 article > h1 {
@@ -16,6 +18,7 @@ body {
 #toptitle {
     text-align: center;
     font-size: xx-large;
+    color: black;
 }
 
 main {
@@ -75,19 +78,5 @@ article > .body {
 
 article {
     color: dodgerblue;
-    text-align: center;
-}
-
-.previous {
-    background-color: white;
-    color: darkblue;
-}
-
-.next {
-    background-color: white;
-    color: darkblue;
-}
-
-.buttons {
     text-align: center;
 }

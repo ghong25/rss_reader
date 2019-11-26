@@ -9,15 +9,28 @@
 <link rel="stylesheet" href="../static/sources.css">
     <h1>Sources</h1>
     <div id="form">
-        <form method="POST" class="feedform">
-        <input name="feed" required>
-        <button type="submit">Add feed</button>
+        <form method="POST">
+            <input name="feed" required>
+            <button type="submit">Add feed</button>
         </form>
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Date Added</th>
+                <th></th>
+            </tr>
+        </table>
         {% for source in sources %}
-        <div>
-            <a href="{{ source.link }}">{{ source.title }}</a>
-        </div>
-    </div>
+            <tr>
+                <td><a href="{{ source.link }}">{{ source.title }}</a></td>
+                <td>{{ source.date_added }}</td>
+                <td>
+                    <form action="">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
     {% endfor %}
 </body>
 {% endblock %}

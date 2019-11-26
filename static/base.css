@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -46,7 +47,7 @@
 
 /* On mouse-over */
 .sidenav a:hover, .dropdown-btn:hover {
-  color: aliceblue;
+  color: dodgerblue;
 }
 
 /* Main content */
@@ -81,5 +82,3 @@ a {
     padding: 8px 16px;
 
 }
-
-

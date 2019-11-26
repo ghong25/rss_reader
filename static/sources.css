@@ -2,7 +2,10 @@ h1 {
     text-align: center;
 }
 
-#form {
-    left: 200px;
-    color: red;
+div > div {
+    text-align: center;
+}
+
+* {
+    text-align: center;
 }
