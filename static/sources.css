@@ -9,3 +9,8 @@ div > div {
 * {
     text-align: center;
 }
+
+#toptitle {
+    color: dodgerblue;
+    text-decoration: underline;
+}

@@ -1,5 +1,4 @@
-from flask import render_template, redirect, request, url_for, flash
-import mysql.connector
+from flask import render_template, redirect, request, flash
 from app import app, db
 from models import Article, Source
 from feed import Feed
@@ -34,7 +33,7 @@ def source_filter(source_id):
     articles = query.all()
 
     sources = Source.query
-    return render_template('home.html', articles=articles, sources=sources)
+    return render_template('sort.html', articles=articles, sources=sources)
 
 # flags articles as read and redirecting to url of particular article
 @app.route('/read/<int:article_id>', methods=['GET'])
