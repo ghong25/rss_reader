@@ -1,4 +1,5 @@
 from flask import render_template, redirect, request, url_for, flash
+import mysql.connector
 from app import app, db
 from models import Article, Source
 from feed import Feed
@@ -9,13 +10,12 @@ def index():
     query = Article.query
     # display only unread articles and sort by descending publication date
     query = query.filter(Article.unread == True)
-    query = query.order_by(Article.date_published.desc())
+    articles = query.order_by(Article.date_published.desc())
 
     sources = Source.query
     page = request.args.get('page', 1, type=int)
 
-    articles = query.paginate(page, 20, False)
-    return render_template('home.html', articles=articles.items, sources=sources)
+    return render_template('home.html', articles=articles, sources=sources)
 
 # different page numbers of the database query
 @app.route('/<int:page_num>')
@@ -75,17 +75,14 @@ def display_source():
     sources = query.all()
     return render_template('remove_source.html', sources=sources)
 
-# delete sources from db
-"""@app.route('/delete/<int:source_id>', methods=['DELETE'])
-def remove_source(source_id):
-    sources = Source.query.filter(Article.source_id == source_id)
-    db.session.delete(sources)
-    return redirect('/delete')
-"""
-
 # Delete Article
-@app.route('/delete_article/<string:source_id>', methods=['POST'])
-def delete_article(source_id):
-    sources = Source.query.filter(Article.source_id == source_id)
-    db.session.delete(sources)
+@app.route('/delete_source/<int:id>', methods=['POST'])
+def delete_source(id):
+    # trying to avoid foreign key constraint?
+    db.session.query(Article).filter(Article.source_id == id).delete()
+    db.session.commit()
+
+    db.session.query(Source).filter(Source.id == id).delete()
+    db.session.commit()
+    flash('Source Deleted', 'success')
     return redirect('/sources')

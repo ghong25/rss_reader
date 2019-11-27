@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aec7e0be-a265-440b-bd5c-f7421562d25b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/remove_source.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/sources.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/sources.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/remove_source.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sources.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sources.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -164,7 +159,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574403060018</updated>
       <workItem from="1574403071265" duration="12984000" />
-      <workItem from="1574481359245" duration="46749000" />
+      <workItem from="1574481359245" duration="49607000" />
     </task>
     <servers />
   </component>
